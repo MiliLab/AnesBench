@@ -6,7 +6,7 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 # 🔥 Update
 **2025.03.31**
-- We released the [AnesBench project page](https://mililab.github.io/anesbench.github.io/) !!!.
+- We released the [AnesBench project page](https://mililab.github.io/anesbench.github.ai/) !!!.
 
 
 
