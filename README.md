@@ -12,16 +12,28 @@
         <sup>4</sup> Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore<br/> 
         <sup>5</sup> Department of Anesthesiology, First People’s Hospital of Yunnan Province, China<br/> 
     </h5>
+
+<sup>∗</sup> Equal contribution, <sup>†</sup> Corresponding author
+
 </div>
 
 
 
 <h5 align="center">
-<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Pages-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <img src="https://img.shields.io/badge/🤗-Coming Soon-FFCC4D.svg">
+<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <img src="https://img.shields.io/badge/🤗-Coming Soon-FF8C00.svg">
 </h5>
+
+<figure>
+<div align="center">
+<img src=figs/logo.png width="20%">
+</div>
+</figure>
 
 
 # 🔥 Update
+**2025.04.04**
+- We uploaded our work on [arXiv](https://arxiv.org/abs/2504.02404)!!!
+
 **2025.03.31**
 - We released the [AnesBench project page](https://mililab.github.io/anesbench.ai/) !!!.
 
@@ -57,10 +69,10 @@ Comming soon...
 If you find AnesBench helpful, please consider giving this repo a ⭐ and citing:
 
 ```latex
-@article{feng2025anesbench,
-    title={AnesBench: Multi-Dimensional Evaluation of LLM Reasoning in Anesthesiology}, 
-    author={Xiang Feng and Wentao Jiang and Zengmao Wang and Yong Luo and Pingbo Xu and Baosheng Yu and Hua Jin and Bo Du and Jing Zhang},
-    journal={arXiv preprint arXiv:2504.02404},
-    year={2025}
+@article{AnesBench,
+  title={AnesBench: Multi-Dimensional Evaluation of LLM Reasoning in Anesthesiology},
+  author={Xiang Feng and Wentao Jiang and Zengmao Wang and Yong Luo and Pingbo Xu and Baosheng Yu and Hua Jin and Bo Du and Jing Zhang},
+  journal={arXiv preprint arXiv:2504.02404},
+  year={2025}
 }
 ```
