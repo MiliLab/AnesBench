@@ -25,6 +25,8 @@
 </div>
 </figure>
 
+</div>
+
 # 🌞 Intro
 **AnesBench** is designed to assess anesthesiology-related reasoning capabilities of Large Language Models (LLMs). 
 It contains 4,427 anesthesiology questions in English. 
