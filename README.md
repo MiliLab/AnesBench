@@ -46,9 +46,13 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 # 🔍 Overview
 <figure>
+<div align="center">
 <img src="figs/overview.png">
+</div>
+<div align="center">
 <figcaption align = "center"><b>Figure 1: Overview of the AnesBench. 
  </b></figcaption>
+</div>
 </figure>
 
 # 📖 Datasets
