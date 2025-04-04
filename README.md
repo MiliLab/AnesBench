@@ -15,7 +15,7 @@
 
 <p align='center'>
   <a href="https://mililab.github.io/anesbench.ai/"><img alt="Project" src="https://img.shields.io/badge/Project-Page-87CEEB?style=for-the-badge" /></a>
-  <a href="https://arxiv.org/abs/2504.02404"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2406.11519-b31b1b?style=for-the-badge" /></a>
+  <a href="https://arxiv.org/abs/2504.02404"><img alt="Paper" src="https://img.shields.io/badge/arXiv-2504.02404-b31b1b?style=for-the-badge" /></a>
   <a href="#"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/MiliLab/AnesBench?style=for-the-badge" /></a>
 </p>
 
