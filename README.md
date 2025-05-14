@@ -69,6 +69,39 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 <a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-FFD43B.svg?logo=huggingface"></a>
 
+### JSON Sample
+
+```json
+    {
+        "id": "1bb76e22-6dbf-5b17-bbdf-0e6cde9f9440",
+        "choice_num": 4,
+        "answer": "A",
+        "level": 1,
+        "en_question": "english question",
+        "en_X": "option X",
+        "zh_question": "中文问题",
+        "zh_X": "选项X",
+    }
+```
+
+### Field Explanations
+
+| Field         | Type   | Description                                                                 |
+|------------------|----------|-----------------------------------------------------------------------------|
+| `id`             | string   | A randomly generated ID using UUID                                          |
+| `choice_num`     | int      | The number of choices in this question                                      |
+| `answer`         | string   | The correct answer to this question                                         |
+| `level`          | int      | The cognitive demand level of the question (`1`, `2`, and `3` represent `system1`, `system1.x`, and `system2` respectively) |
+| `en_question`    | string   | English description of the question stem                                   |
+| `cn_question`    | string   | Chinese description of the question stem                                   |
+| `en_X`           | string   | English description of the option                                          |
+| `cn_X`           | string   | Chinese description of the option                                          |
+
+
+### Recommended Usage
+
+- **Question Answering**: QA in a zero-shot or few-shot setting, where the question is fed into a QA system. Accuracy should be used as the evaluation metric.
+
 ## AnesCorpus
 
 ## AnesQA
