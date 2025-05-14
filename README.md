@@ -100,7 +100,7 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 ### Recommended Usage
 
-- **Question Answering**: QA in a zero-shot or few-shot setting, where the question is fed into a QA system. Accuracy should be used as the evaluation metric.
+- **Question Answering**: QA in a zero-shot or few-shot setting, where the question is fed into a LLM or other QA system. Accuracy could be used as the evaluation metric.
 
 ## AnesCorpus
 
