@@ -152,7 +152,7 @@ and run:
 source .env
 ```
 
-## 2. Run Evaluation
+## ▶️ 2. Run Evaluation
 
 ### For SGLang service
 ```bash
