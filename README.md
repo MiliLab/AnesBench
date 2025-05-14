@@ -31,6 +31,12 @@
 
 
 # 🔥 Update
+**2025.05.14**
+- We released the evaluation code along with usage instructions!!!
+
+**2025.05.13**
+- We released AnesBench on HuggingFace!!!
+
 **2025.04.04**
 - We uploaded our work on [arXiv](https://arxiv.org/abs/2504.02404)!!!
 
@@ -56,17 +62,106 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 </figure>
 
 # 📖 Datasets
-Comming soon...
 
 ## AnesBench
+
+<a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-FFD43B.svg?logo=huggingface"></a>
 
 ## AnesCorpus
 
 ## AnesQA
 
 
-# 🔨 Evaluation code
-Comming soon...
+# 🔨 Evaluation
+
+---
+
+## 📁 0. Clone the Repository & Download Benchmark
+
+Clone Repository:
+
+```bash
+git clone https://github.com/MiliLab/AnesBench
+cd AnesBench
+```
+
+Download Benchmark:
+```bash
+cd benchmark
+huggingface-cli download --repo-type dataset  MiliLab/AnesBench --local-dir ./
+```
+---
+
+## 🧱 1. Prepare the Runtime Environment
+
+Before starting, ensure that `CUDA` and its compiler `nvcc` are properly installed and accessible.
+
+### Check:
+```bash
+nvcc --version
+```
+
+We recommend separating the SGLang service environment from the inference environment.
+
+### SGLang service environment
+
+```bash
+conda create -n sglang_server python==3.10
+conda activate sglang_server
+```
+
+Then, install the required `sglang` and `flashinfer` packages.
+
+```bash
+pip install "sglang[all]"
+pip install sglang-router 
+```
+Download the wheel file for your environment from [https://github.com/flashinfer-ai/flashinfer/releases](https://github.com/flashinfer-ai/flashinfer/releases).
+
+```bash
+pip install /path/to/flashinfer-wheel
+```
+
+### Inference environment
+
+Create a new environment and install the packages based on the requirements file.
+
+```bash
+conda create -n inference python==3.10
+conda activate inference
+cd eval
+pip install -r requirements.txt
+```
+---
+
+### Environment Variables
+
+Prepare environment variables in the `.env` file.
+
+```bash
+export RESULT_SAVE_PATH=/path/to/result_save_dir
+export MODEL_PATH=/path/to/model
+export BENCHMARK_PATH=/path/to/benchmark
+```
+
+and run:
+
+```bash
+source .env
+```
+
+## Run Evaluation
+
+### For SGLang service
+```bash
+bash sglang_server.sh 
+```
+
+### For Inference
+```bash
+python ./evaluate.py --config ./config.yaml 
+```
+
 
 # ⭐ Citation
 

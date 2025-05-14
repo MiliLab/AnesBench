@@ -1,0 +1,10 @@
+llm:
+  api_key: "sk-"
+  base_url: "http://localhost:8001"
+  path: !env ${RESULT_SAVE_PATH}
+  model_path: !env ${MODEL_PATH}
+  generation:
+    temperature: 0
+    max_new_tokens: 2048
+max_workers: 16
+benchmark_path: !env ${BENCHMARK_PATH}
