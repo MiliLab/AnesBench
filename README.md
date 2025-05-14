@@ -22,7 +22,7 @@
 
 
 <h5 align="center">
-<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <img src="https://img.shields.io/badge/🤗-Coming Soon-FF8C00.svg">
+<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-FFD43B.svg?logo=huggingface"> </a>
 </h5>
 
 <figure>
