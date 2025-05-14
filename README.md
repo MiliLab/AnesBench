@@ -8,9 +8,11 @@
 <em>Xiang Feng<sup>1 *</sup>, Wentao Jiang<sup>1 *</sup>, Zengmao Wang<sup>1</sup>, Yong Luo<sup>1 †</sup>, Pingbo Xu<sup>2,3</sup>, Baosheng Yu<sup>4</sup>,<br/> Hua Jin<sup>5,6</sup>, Bo Du<sup>1 †</sup>, Jing Zhang<sup>3 †</sup> </em>
     <br><br>
        	<sup>1</sup> School of Computer Science, Wuhan University, China,<br/>
-        <sup>2</sup> Department of Anesthesiology, Zhejiang Cancer Hospital, China,<br/> <sup>3</sup> Institute of Medicine, Chinese Academy of Sciences, Hangzhou, Zhejiang, China<br/> 
+        <sup>2</sup> Department of Anesthesiology, Zhejiang Cancer Hospital, China,<br/> 
+        <sup>3</sup> Institute of Medicine, Chinese Academy of Sciences, Hangzhou, Zhejiang, China<br/> 
         <sup>4</sup> Lee Kong Chian School of Medicine, Nanyang Technological University, Singapore<br/> 
         <sup>5</sup> Department of Anesthesiology, First People’s Hospital of Yunnan Province, China<br/> 
+        <sup>6</sup> Kunming University of Science and Technology, China<br/> 
 </h5>
 <h5>
 <sup>∗</sup> Equal contribution, <sup>†</sup> Corresponding author
