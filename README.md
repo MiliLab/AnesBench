@@ -106,7 +106,7 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 | Field         | Type   | Description                                                                 |
 |------------------|----------|-----------------------------------------------------------------------------|
 | `id`             | string   | A randomly generated ID using UUID                                          |
-| `choice_num`     | int      | The number of choices in this question                                      |
+| `choice_num`     | int      | The number of options in this question                                      |
 | `answer`         | string   | The correct answer to this question                                         |
 | `level`          | int      | The cognitive demand level of the question (`1`, `2`, and `3` represent `system1`, `system1.x`, and `system2` respectively) |
 | `en_question`    | string   | English description of the question stem                                   |
