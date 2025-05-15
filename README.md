@@ -22,7 +22,7 @@
 
 
 <h5 align="center">
-<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"> </a>
+<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"></a>
 </h5>
 
 <figure>
@@ -64,10 +64,13 @@
 
 
 # 🌞 Intro
-**AnesBench** is designed to assess anesthesiology-related reasoning capabilities of Large Language Models (LLMs). 
-It contains 4,427 anesthesiology questions in English. 
-Each question is labeled with a three-level categorization of cognitive demands and includes Chinese-English translations, 
-enabling evaluation of LLMs’ knowledge, application, and clinical reasoning abilities across diverse linguistic contexts.
+This project aims to enhance the reasoning capabilities of large language models in the field of anesthesiology. We focus on two key questions: (1) What model characteristics are associated with stronger anesthetic reasoning abilities? (2) How do training methodologies and test-time scaling influence LLM performance in anesthesiology-specific reasoning tasks?
+
+During the course of the project, we developed three datasets: **AnesBench**, a bilingual benchmark for anesthetic reasoning; **AnesQA**, a supervised fine-tuning dataset; and **AnesCorpus**, a continual pretraining corpus.
+
+This Github repository provides an overview of the datasets, usage examples, and a leaderboard featuring performance results of over 50 state-of-the-art LLMs.
+
+> For dataset access, please refer to our Hugging Face repository: [AnesBench](https://huggingface.co/datasets/MiliLab/AnesBench), [AnesQA](https://huggingface.co/datasets/MiliLab/AnesQA) and [AnesCorpus](https://huggingface.co/datasets/MiliLab/AnesCorpus).
 
 > For key insights and conclusions, please refer to the [AnesBench project page](https://mililab.github.io/anesbench.ai/).
 
@@ -88,7 +91,10 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 <a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"></a>
 
-**AnesBench** comprises 4,427 bilingual questions categorized into three cognitive demand levels: system1, system1.x, and system2. Each question includes multiple fields, such as Chinese and English versions of the item, the correct answer, and a cognitive demand label. This benchmark is designed to evaluate the anesthetic reasoning capabilities of large language models.
+**AnesBench** is designed to assess anesthesiology-related reasoning capabilities of Large Language Models (LLMs). 
+It contains 4,427 anesthesiology questions in English. 
+Each question is labeled with a three-level categorization of cognitive demands and includes Chinese-English translations, 
+enabling evaluation of LLMs’ knowledge, application, and clinical reasoning abilities across diverse linguistic contexts.
 
 ### JSON Sample
 
