@@ -69,6 +69,8 @@ It contains 4,427 anesthesiology questions in English.
 Each question is labeled with a three-level categorization of cognitive demands and includes Chinese-English translations, 
 enabling evaluation of LLMs’ knowledge, application, and clinical reasoning abilities across diverse linguistic contexts.
 
+> For key insights and conclusions, please refer to the [AnesBench project page](https://mililab.github.io/anesbench.ai/).
+
 # 🔍 Overview
 <figure>
 <div align="center">
@@ -85,6 +87,8 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 ## AnesBench
 
 <a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"></a>
+
+**AnesBench** comprises 4,427 bilingual questions categorized into three cognitive demand levels: system1, system1.x, and system2. Each question includes multiple fields, such as Chinese and English versions of the item, the correct answer, and a cognitive demand label. This benchmark is designed to evaluate the anesthetic reasoning capabilities of large language models.
 
 ### JSON Sample
 
