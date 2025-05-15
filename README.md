@@ -154,7 +154,7 @@ AnesQA enables the development of instruction-tuned models with robust reasoning
 
 These datasets are compatible with a wide range of instruction-tuned language models and popular training frameworks.
 
-We provide an example below demonstrating how to fine-tune a model using AnesCorpus and AnesQA with [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). For implementation details, refer to the [**Example Usage**](#-training-with-llama-factory).
+We provide an example below demonstrating how to fine-tune a model using AnesCorpus and AnesQA with [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). For implementation details, refer to the [**Example Usage**](#️-training-with-llama-factory).
 
 #  🐎 Leaderboard
 
