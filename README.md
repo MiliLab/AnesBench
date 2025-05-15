@@ -22,7 +22,7 @@
 
 
 <h5 align="center">
-<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-FFD43B.svg?logo=huggingface"> </a>
+<a href="https://mililab.github.io/anesbench.ai/"> <img src="https://img.shields.io/badge/Project-AnesBench-4183C4.svg?logo=Github"></a> <a href="https://arxiv.org/abs/2504.02404"> <img src="https://img.shields.io/badge/Arxiv-2504.02404-b31b1b.svg?logo=arXiv"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"> </a>
 </h5>
 
 <figure>
@@ -41,8 +41,10 @@
     - [AnesBench JSON Example](#json-sample)
     - [Field Explanations](#field-explanations)
     - [AnesBench Recommended Usage](#recommended-usage)
+  - [AnesCorpus & AnesQA](#anescorpus--anesqa)
 - [🐎 Leaderboard](#-leaderboard)
 - [🔨 Evaluation](#-evaluation)
+- [🛠️ Training with LLaMA-Factory](#️-training-with-llama-factory)
 - [⭐ Citation](#-citation)
 
 
@@ -82,7 +84,7 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 ## AnesBench
 
-<a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-Dataset-FFD43B.svg?logo=huggingface"></a>
+<a href="https://huggingface.co/datasets/MiliLab/AnesBench"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesBench-FFD43B.svg?logo=huggingface"></a>
 
 ### JSON Sample
 
@@ -117,9 +119,42 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 
 - **Question Answering**: QA in a zero-shot or few-shot setting, where the question is fed into a LLM or other QA system. Accuracy could be used as the evaluation metric.
 
-## AnesCorpus
+## AnesCorpus & AnesQA
+<a href="https://huggingface.co/datasets/MiliLab/AnesCorpus"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesCorpus-FFD43B.svg?logo=huggingface"></a> <a href="https://huggingface.co/datasets/MiliLab/AnesQA"> <img src="https://img.shields.io/badge/🤗%20HuggingFace-AnesQA-FFD43B.svg?logo=huggingface"></a>
 
-## AnesQA
+We also provides two domain-specific datasets—**AnesCorpus** and **AnesQA**—designed to support research and development of language models in the field of anesthesiology. These resources are tailored for use in Continuous Pre-training (CPT) and Supervised Fine-Tuning (SFT) of LLMs.
+
+### AnesCorpus
+
+**AnesCorpus** is a large-scale, domain-specific corpus constructed for **Continuous Pre-training (CPT)** in the field of anesthesiology. It is built from two primary sources:
+
+- **Domain-specific filtering** from large-scale corpora such as [FineWeb](https://huggingface.co/datasets/gaudi/fineweb), using keyword-based heuristics.
+- **PubMed research articles** related to anesthesiology, processed through rigorous cleaning and formatting to ensure high relevance and quality.
+
+| Language | Rows    | Tokens   |
+|----------|---------|----------|
+| English  | ~1.59M  | ~3B      |
+| Chinese  | ~593K   | ~0.2B    |
+
+This curated dataset provides a rich foundation for pretraining language models to understand anesthesiology-related concepts, terminology, and clinical context.
+
+
+### AnesQA
+
+**AnesQA** is a bilingual **question-answering (QA)** dataset designed for **Supervised Fine-Tuning (SFT)**. The QA pairs are generated and filtered using advanced large language models, then translated to Chinese to support multilingual fine-tuning.
+
+| Language | QA Pairs |
+|----------|----------|
+| English  | ~20.7K   |
+| Chinese  | ~20.6K   |
+
+AnesQA enables the development of instruction-tuned models with robust reasoning and answering capabilities in the anesthesiology domain.
+
+### Recommended Usage
+
+These datasets are compatible with a wide range of instruction-tuned language models and popular training frameworks.
+
+We provide an example below demonstrating how to fine-tune a model using AnesCorpus and AnesQA with [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory). For implementation details, refer to the [**Example Usage**](#-training-with-llama-factory).
 
 #  🐎 Leaderboard
 
@@ -266,6 +301,107 @@ bash sglang_server.sh
 ### For Inference
 ```bash
 python ./evaluate.py --config ./config.yaml 
+```
+
+---
+
+# 🛠️ Training with LLaMA-Factory
+
+To train with **AnesCorpus** (for CPT) and **AnesQA** (for SFT) using [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), follow the steps below:
+
+
+## 1️. Install LLaMA-Factory
+
+Follow the [LLaMA-Factory official installation guide](https://llamafactory.readthedocs.io/en/latest/getting_started/installation.html), or use the following scripts:
+
+```bash
+git clone --depth 1 https://github.com/hiyouga/LLaMA-Factory.git
+cd LLaMA-Factory
+pip install -e ".[torch,metrics]"
+```
+
+## 2. Convert Data to LLaMA-Factory Format
+
+We provide scripts to convert the raw Parquet files into the required JSON format.
+
+> 📌 The `--split` argument can be set to:
+> - `en`: English data only  
+> - `cn`: Chinese data only  
+> - `all`: merge both English and Chinese
+
+#### For AnesCorpus (CPT):
+```bash
+python tools/anescorpus2json.py \
+    --local-dir /path/to/anescorpus/parquet_files \
+    --save-dir ./data \
+    --split en
+```
+This will generate:  
+`
+./data/AnesCorpus_en.json
+`
+
+
+#### For AnesQA (SFT):
+```bash
+python tools/anescorpus2json.py \
+    --local-dir /path/to/anesqa/parquet_files \
+    --save-dir ./data \
+    --split en \
+    --instruction "Please answer the following question based on the anesthesiology context."
+```
+
+This will generate:  
+`
+./data/AnesCorpus_en.json
+`
+
+## 3. Register the Dataset
+Move your dataset in `LLaMA-Factory/data`, and register your dataset entries in `LLaMA-Factory/data/dataset_info.json/`. 
+
+
+```json
+{
+  "anescorpus_en": {
+    "file_name": "AnesCorpus_en.json",
+    "columns": {
+      "prompt": "text"
+    }
+  },
+  "anesqa_en": {
+    "file_name": "AnesQA_en.json",
+  }
+}
+```
+
+For more details on dataset registration and formatting, refer to the official data preparation guide in [manual](https://llamafactory.readthedocs.io/en/latest/getting_started/data_preparation.html) and [github](https://github.com/hiyouga/LLaMA-Factory/blob/main/data/README.md).
+
+## 4. Set Config File
+You can use or modify the example config files we provide in `configs/`.
+
+Edit them to set paths like:
+
+```yaml
+// Example snippet
+dataset_dir: LLaMA-Factory/data    // Directory contains "dataset_info.json"
+dataset: anesqa_en
+model_name_or_path: meta-llama/Llama-3.1-8B-Instruct
+output_dir: ./output/llama3.1-anesqa-sft
+...
+```
+More details can be found in [official guide](https://llamafactory.readthedocs.io/en/latest/advanced/arguments.html).
+
+## 5. Launch Training from CLI
+### Continuous Pre-training (CPT)
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+llamafactory-cli train configs/qwen2.5-7b-pt-anesthesia.yaml
+```
+
+### Supervised Fine-Tuning (SFT)
+```bash
+CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
+llamafactory-cli train configs/qwen2.5-7b-sft-anesthesia.yaml
 ```
 
 
