@@ -111,8 +111,8 @@ enabling evaluation of LLMs’ knowledge, application, and clinical reasoning ab
 | `level`          | int      | The cognitive demand level of the question (`1`, `2`, and `3` represent `system1`, `system1.x`, and `system2` respectively) |
 | `en_question`    | string   | English description of the question stem                                   |
 | `cn_question`    | string   | Chinese description of the question stem                                   |
-| `en_X`           | string   | English description of the option                                          |
-| `cn_X`           | string   | Chinese description of the option                                          |
+| `en_X`           | string   | English description of the option (X takes values from A until the total number of options is reached)                                         |
+| `cn_X`           | string   | Chinese description of the option (X takes values from A until the total number of options is reached)                                         |
 
 
 ### Recommended Usage
